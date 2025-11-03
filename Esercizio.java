@@ -1,33 +1,47 @@
-
 public class Esercizio {
-    
-    public static void esercizio1() {
-        // SCRIVERE QUI IL CODICE DELL'ESERCIZIO 1
+
+    public static void riempiPerRighe(int[][] M, int righe, int colonne) {
+        int c = 1;
+        int i = 0;
+        while(i < righe){
+            int j = 0;
+            while(j < colonne){
+                M[i][j] = c;
+                ++c;
+                ++j;
+            }
+            ++i;
+        }
     }
-    
-    public static void esercizio2() {
-        // SCRIVERE QUI IL CODICE DELL'ESERCIZIO 2
+
+    public static void riempiPerColonne(int[][] M, int righe, int colonne) {
+        int c = 1;
+        int j = 0;
+        while(j < colonne){
+            int i = 0;
+            while(i < righe){
+                M[i][j] = c;
+                ++c;
+                ++i;
+            }
+            ++j;
+        }
     }
-    
-    public static void esercizio3() {
-        // SCRIVERE QUI IL CODICE DELL'ESERCIZIO 3
-    }
-    
+
     public static void main(String[] args) {
 
-        System.out.println();
-        System.out.println("ESERCIZIO 1: ");
-        System.out.println("----- ----- -----");
-        esercizio1();
-        
-        System.out.println();
-        System.out.println("ESERCIZIO 2: ");
-        System.out.println("----- ----- -----");
-        esercizio2();
-        
-        System.out.println();
-        System.out.println("ESERCIZIO 3: ");
-        System.out.println("----- ----- -----");
-        esercizio3();
+        int righe = 5;
+        int colonne = 5;
+
+        int[][] matricePerRighe = new int[righe][colonne];
+        int[][] matricePerColonne = new int[righe][colonne];
+
+        System.out.println("Per righe");
+        riempiPerRighe(matricePerRighe, righe, colonne);
+        UtilsMatrice.visualizza(matricePerRighe);
+
+        System.out.println("Per colonne: ");
+        riempiPerColonne(matricePerColonne, righe, colonne);
+        UtilsMatrice.visualizza(matricePerColonne);
     }
 }
